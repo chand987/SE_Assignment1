@@ -176,6 +176,17 @@ public class ArgsTest {
       assertEquals('x', e.getErrorArgumentId());
     }
   }
+  
+  @Test
+  public void malFormedMapArgument() throws Exception {
+    try {
+      new Args("f&", new String[] {"-f", "key1:val1,key2"});
+      fail();
+    } catch (ArgsException e) {
+      assertEquals(MALFORMED_MAP, e.getErrorCode());
+      assertEquals('f', e.getErrorArgumentId());
+    }
+  }
 
   @Test
   public void manyStringArrayElements() throws Exception {
@@ -195,11 +206,6 @@ public class ArgsTest {
     Map<String, String> map = args.getMap('f');
     assertEquals("val1", map.get("key1"));
     assertEquals("val2", map.get("key2"));
-  }
-
-  @Test(expected=ArgsException.class)
-  public void malFormedMapArgument() throws Exception {
-    Args args = new Args("f&", new String[] {"-f", "key1:val1,key2"});
   }
 
   @Test
