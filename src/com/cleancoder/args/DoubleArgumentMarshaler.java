@@ -1,6 +1,7 @@
 package com.cleancoder.args;
 
-import static com.cleancoder.args.ArgsException.ErrorCode.*;
+import static com.cleancoder.args.ArgsException.ErrorCode.INVALID_DOUBLE;
+import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_DOUBLE;
 
 import java.util.*;
 

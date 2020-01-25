@@ -1,6 +1,6 @@
 package com.cleancoder.args;
 
-import static com.cleancoder.args.ArgsException.ErrorCode.*;
+import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_STRING;
 
 import java.util.*;
 

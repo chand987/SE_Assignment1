@@ -1,6 +1,7 @@
 package com.cleancoder.args;
 
-import static com.cleancoder.args.ArgsException.ErrorCode.*;
+import static com.cleancoder.args.ArgsException.ErrorCode.INVALID_INTEGER;
+import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_INTEGER;
 
 import java.util.*;
 

@@ -5,7 +5,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-import static com.cleancoder.args.ArgsException.ErrorCode.*;
+import static com.cleancoder.args.ArgsException.ErrorCode.MALFORMED_MAP;
+import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_MAP;
 
 public class MapArgumentMarshaler implements ArgumentMarshaler {
   private Map<String, String> map = new HashMap<>();

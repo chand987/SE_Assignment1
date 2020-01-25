@@ -1,6 +1,16 @@
 package com.cleancoder.args;
 
-import static com.cleancoder.args.ArgsException.ErrorCode.*;
+import static com.cleancoder.args.ArgsException.ErrorCode.INVALID_ARGUMENT_FORMAT;
+import static com.cleancoder.args.ArgsException.ErrorCode.INVALID_ARGUMENT_NAME;
+import static com.cleancoder.args.ArgsException.ErrorCode.INVALID_DOUBLE;
+import static com.cleancoder.args.ArgsException.ErrorCode.INVALID_INTEGER;
+import static com.cleancoder.args.ArgsException.ErrorCode.MALFORMED_MAP;
+import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_DOUBLE;
+import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_INTEGER;
+import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_MAP;
+import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_STRING;
+import static com.cleancoder.args.ArgsException.ErrorCode.OK;
+import static com.cleancoder.args.ArgsException.ErrorCode.UNEXPECTED_ARGUMENT;
 
 import junit.framework.TestCase;
 
