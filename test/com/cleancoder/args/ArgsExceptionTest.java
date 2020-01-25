@@ -1,8 +1,8 @@
 package com.cleancoder.args;
 
-import junit.framework.TestCase;
-
 import static com.cleancoder.args.ArgsException.ErrorCode.*;
+
+import junit.framework.TestCase;
 
 public class ArgsExceptionTest extends TestCase {
 // test for OK condition

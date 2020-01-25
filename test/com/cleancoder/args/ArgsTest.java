@@ -1,11 +1,14 @@
 package com.cleancoder.args;
 
-import org.junit.Test;
+import static com.cleancoder.args.ArgsException.ErrorCode.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.Map;
 
-import static com.cleancoder.args.ArgsException.ErrorCode.*;
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class ArgsTest {
 
@@ -200,7 +203,7 @@ public class ArgsTest {
   }
 
   @Test
-  public void MapArgument() throws Exception {
+  public void mapArgument() throws Exception {
     Args args = new Args("f&", new String[] {"-f", "key1:val1,key2:val2"});
     assertTrue(args.has('f'));
     Map<String, String> map = args.getMap('f');

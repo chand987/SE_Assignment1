@@ -15,8 +15,9 @@ public class MapArgumentMarshaler implements ArgumentMarshaler {
       String[] mapEntries = currentArgument.next().split(",");
       for (String entry : mapEntries) {
         String[] entryComponents = entry.split(":");
-        if (entryComponents.length != 2)
+        if (entryComponents.length != 2) {
           throw new ArgsException(MALFORMED_MAP);
+        }
         map.put(entryComponents[0], entryComponents[1]);
       }
     } catch (NoSuchElementException e) {
@@ -25,9 +26,10 @@ public class MapArgumentMarshaler implements ArgumentMarshaler {
   }
 
   public static Map<String, String> getValue(ArgumentMarshaler am) {
-    if (am != null && am instanceof MapArgumentMarshaler)
+    if (am != null && am instanceof MapArgumentMarshaler) {
       return ((MapArgumentMarshaler) am).map;
-    else
+    } else {
       return new HashMap<>();
+    }
   }
 }
