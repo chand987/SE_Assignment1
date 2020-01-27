@@ -20,25 +20,27 @@ This is an assignment given in Software Engineering course(2020) at [Internation
 
 ## Table of Contents
 
-[Objective](link)
- [Installation](link)
- [Before You Run The Code](link)
- [For Tests](link)
+[Objective](https://github.com/chand987/SE_Assignment1/blob/master/README.md#objective-)
 
-[Usage](link)
-* [Instructions](link)
-* [Schema](link)
-* [Text](link)
+[Installation](https://github.com/chand987/SE_Assignment1#installation-)
 
-[Understanding the Code](link)
-* [Class Diagram Args](link)
-* [JavaDocs](link)
+[Before You Run The Code](https://github.com/chand987/SE_Assignment1#before-you-run-the-code-)
 
-[Clean Code](link)
-* [Code Coverage](link)
-  * [Removed uncovered methods and lines](link)
-  * [Test case added](link)
-* [Code Smells](link)
+[For Tests](https://github.com/chand987/SE_Assignment1#for-tests-)
+
+[Usage](https://github.com/chand987/SE_Assignment1#usage-)
+* [Instructions](https://github.com/chand987/SE_Assignment1#instructions)
+* [Schema](https://github.com/chand987/SE_Assignment1#schema-)
+
+[Understanding the Code](https://github.com/chand987/SE_Assignment1#understanding-the-code-)
+* [Class Diagram Args](https://github.com/chand987/SE_Assignment1#class-diagram-args-)
+* [JavaDocs](https://github.com/chand987/SE_Assignment1#javadocs-)
+
+[Clean Code](https://github.com/chand987/SE_Assignment1#clean-code-)
+* [Code Coverage](https://github.com/chand987/SE_Assignment1#code-coverage-)
+  * [Removed uncovered methods and lines](https://github.com/chand987/SE_Assignment1#removed-uncovered-methods-and-lines)
+  * [Test case added](https://github.com/chand987/SE_Assignment1#test-case-added)
+* [Code Smells](https://github.com/chand987/SE_Assignment1#code-smells-)
 	* [Long Method](link)
 	* [God Class](link)
 * [Linting Improvements](link)
