@@ -21,9 +21,9 @@ This is an assignment given in Software Engineering course(2020) at [Internation
 ## Table of Contents
 
 [Objective](link)
-* [Installation](link)
-* [Before You Run The Code](link)
-* [For Tests](link)
+ [Installation](link)
+ [Before You Run The Code](link)
+ [For Tests](link)
 
 [Usage](link)
 * [Instructions](link)
