@@ -45,7 +45,7 @@ This is an assignment given in Software Engineering course(2020) at [Internation
 	* [Long Method](https://github.com/chand987/SE_Assignment1/blob/master/README.md#long-method)
 	* [God Class](https://github.com/chand987/SE_Assignment1/blob/master/README.md#god-class)
 * [Linting Improvements](https://github.com/chand987/SE_Assignment1/blob/master/README.md#linting-improvements-)
-* [Finding Bugs]()
+* [Finding Bugs](https://github.com/chand987/SE_Assignment1/blob/master/README.md#finding-bug)
 
 ## Objective :
 
