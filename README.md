@@ -1,5 +1,6 @@
 
 <div align=center>
+ <h1>JavaArgs</h1>
   <h1>Code Cleaning </h1>
   <h1>Software Engineering (Assignment-1)</h1>
   <div align=right>
@@ -33,17 +34,18 @@ This is an assignment given in Software Engineering course(2020) at [Internation
 * [Schema](https://github.com/chand987/SE_Assignment1#schema-)
 
 [Understanding the Code](https://github.com/chand987/SE_Assignment1#understanding-the-code-)
-* [Class Diagram Args](https://github.com/chand987/SE_Assignment1#class-diagram-args-)
 * [JavaDocs](https://github.com/chand987/SE_Assignment1#javadocs-)
 
 [Clean Code](https://github.com/chand987/SE_Assignment1#clean-code-)
 * [Code Coverage](https://github.com/chand987/SE_Assignment1#code-coverage-)
   * [Removed uncovered methods and lines](https://github.com/chand987/SE_Assignment1#removed-uncovered-methods-and-lines)
-  * [Test case added](https://github.com/chand987/SE_Assignment1#test-case-added)
+  * [Test case added(1)](https://github.com/chand987/SE_Assignment1#test-case-added)
+  * [Test case added(2)]()
 * [Code Smells](https://github.com/chand987/SE_Assignment1#code-smells-)
 	* [Long Method](https://github.com/chand987/SE_Assignment1/blob/master/README.md#long-method)
 	* [God Class](https://github.com/chand987/SE_Assignment1/blob/master/README.md#god-class)
 * [Linting Improvements](https://github.com/chand987/SE_Assignment1/blob/master/README.md#linting-improvements-)
+* [Finding Bugs]()
 
 ## Objective :
 
@@ -145,20 +147,9 @@ Corresponding command line: "-f -s Bob -n 1 -a 3.2 -p e1 -p e2 -p e3
 
 ## Understanding the Code :
 
-### Class Diagram Args :
-
-[Class Diagram](src/classdiag/Class_Diagram)
-
-![image](https://res.cloudinary.com/dhso5z9a1/image/upload/v1579950369/Class_Diagram_ynkm2n.jpg)
-
-Or you may find it in eclipse at 
-```
-src/ArgsClassDiagram.ucls
-```
-
 ### JavaDocs :
 
-To understand the code better follow the [JavaDocs]() given for the code.
+To understand the code better follow the [JavaDoc](https://raw.githack.com/chand987/SE_Assignment1/master/doc/index.html) given for the code.
 
 *JavaDocs for  tests are not available. So to reduce the on-screen clutter of code, I have tried to make classes/methods/ arg names to be more descriptive in-order to save the clutter.*
 
@@ -219,7 +210,7 @@ Repeat the same again.
 public void setErrorCode(ErrorCode  errorCode) {  this.errorCode = errorCode;}
 ```
 
-#### Test case added:
+#### Test case added(1):
 In  ```ArgsExceptionTest.java```  Test for OK condition is added.
 
 ```testOkMessage()```  was not available in the code and  **OK** enum was not covered. 
@@ -234,6 +225,22 @@ ArgsException e = new ArgsException(OK, 'x', null);
 assertEquals("TILT: Should not get here.", e.errorMessage());
 
 }
+
+```
+#### Test case added(2):
+In ```ArgsTest.java``` test case added  for concatenated type strings as arguments. 
+
+```
+  @Test 
+  public void testContinuousFlags() throws Exception {
+    Args argsData = new Args("x#,y##", new String[]{"-xy", "20", "4.5"});
+    assertTrue(argsData.has('x'));
+    assertTrue(argsData.has('y'));
+    assertEquals(20, argsData.getInt('x'));
+    assertEquals(4.5, argsData.getDouble('y'),.001);
+  
+  }
+  
 ```
 ### Code Smells :
 ##### Definition of code smell:
@@ -251,7 +258,7 @@ Those were in
 #### Long Method
 * Extract Method for variable criteria **'m'**
 
-The changes that are stated below are in-coherence with the following manual which clearly states the decomposition methodology. For step by step details about code smell improvement, refer  [Jdeodrant](https://users.encs.concordia.ca/~nikolaos/jdeodorant/index.php?option=com_content&view=article&id=45)
+The changes that are stated below are in-coherence with the following manual which clearly states the decomposition methodology. For step by step details about code smell(Long method) improvement, refer  [Jdeodrant](https://users.encs.concordia.ca/~nikolaos/jdeodorant/index.php?option=com_content&view=article&id=45)
 
 Name | Refactoring Type | Variable Criteria
 --- | --- | ---
@@ -267,7 +274,7 @@ throw new  ArgsException(UNEXPECTED_ARGUMENT, argChar, null);
 #### God Class
 * for ```schema``` Extract Class
 
-The changes that are stated below are in-coherence with the following manual which clearly states the decomposition methodology. For step by step details about code smell improvement, refer  [Jdeodrant](https://users.encs.concordia.ca/~nikolaos/jdeodorant/index.php?option=com_content&view=article&id=45)
+For step by step details about code smell (God class) improvement, refer  [Jdeodrant](https://users.encs.concordia.ca/~nikolaos/jdeodorant/index.php?option=com_content&view=article&id=45)
 
  File ```ArgsData.java``` was created in order to decompose the following class:
 
@@ -395,6 +402,23 @@ return; // return statement shifted here
 
 }
 ```
+## Finding Bug
+
+JavaArgs program has a bug in the schema which is described below :
+
+The arguments can read only a single command line character that is passed and ignore the characters passed after.
+
+For example
+
+```
+Args args = new Args("x,y", new String[]{"-x", "abcd", "-y", "zxcv"});
+
+```
+In the above code the arguments taken and tested are primarily abcd and not zxcv if passed as serial arguments.
+
+<b>Fix
+
+This can be fixed by changing the schema definition handling and parsing in the code.
 
 
 
