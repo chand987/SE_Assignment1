@@ -8,8 +8,8 @@
   <div align=right>
   <b>Roll no:</b>
   <b>2019900069</b>
- <div align=left>
-  
+ 
+<div align=left>  
 
 ## Disclaimer :
 
@@ -18,8 +18,28 @@ This segment of code is being forked from the Args program described in [Uncle B
 
 This is an assignment given in Software Engineering course(2020) at [International Institute of Information Technology](https://stackedit.io/www.iiit.ac.in) to have a good practice in code cleaning.
 
+## Table of Contents
 
+[Objective](link)
+* [Installation](link)
+* [Before You Run The Code](link)
+* [For Tests](link)
 
+[Usage](link)
+* [Instructions](link)
+* [Schema](link)
+* [Text](link)
+
+[Understanding the Code](link)
+* [Class Diagram Args](link)
+* [JavaDocs](link)
+
+[Clean Code](link)
+* [Code Coverage](link)
+* [Code Smells](link)
+	* [Long Method](link)
+	* [God Class](link)
+* [Linting Improvements](link)
 
 ## Objective :
 
@@ -59,7 +79,7 @@ Before you Run the code, you need to check for the environment setup for Java:
   * run 'java -cp build/jar/args.jar com.cleancoder.args.ArgsMain'
 ```
 
-#### For Tests :
+### For Tests :
 
 Run
 
@@ -101,11 +121,11 @@ public class ArgsMain {
 }
 ```
 
-#### Instructions:
+### Instructions:
 
 Add ```ArgsMain.java``` file in the follwing path : ```root/src/com/cleancoder/args ``` in your code and operate by using the schema given below.
 
-#### Schema :
+### Schema :
 ```
  - char    - Boolean arg.
  - char*   - String arg.
@@ -226,9 +246,6 @@ Those were in
 1. **Long Method**
 * Extract Method for variable criteria **'m'**
 
-2. **God Class**
-* for ```schema``` Extract Class
-
 The changes that are stated below are in-coherence with the following manual which clearly states the decomposition methodology. For step by step details about code smell improvement, refer  [Jdeodrant](https://users.encs.concordia.ca/~nikolaos/jdeodorant/index.php?option=com_content&view=article&id=45)
 
 Name | Refactoring Type | Variable Criteria
@@ -242,8 +259,10 @@ if (m == null) {
 
 throw new  ArgsException(UNEXPECTED_ARGUMENT, argChar, null);
 ```
+2. **God Class**
+* for ```schema``` Extract Class
 
-Also,
+The changes that are stated below are in-coherence with the following manual which clearly states the decomposition methodology. For step by step details about code smell improvement, refer  [Jdeodrant](https://users.encs.concordia.ca/~nikolaos/jdeodorant/index.php?option=com_content&view=article&id=45)
 
  File ```ArgsData.java``` was created in order to decompose the following class:
 
