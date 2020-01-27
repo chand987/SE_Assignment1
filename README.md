@@ -36,6 +36,8 @@ This is an assignment given in Software Engineering course(2020) at [Internation
 
 [Clean Code](link)
 * [Code Coverage](link)
+  * [Removed uncovered methods and lines](link)
+  * [Test case added](link)
 * [Code Smells](link)
 	* [Long Method](link)
 	* [God Class](link)
@@ -196,12 +198,12 @@ Now the methods of code cleaning are discussed below in details.
 * As per the discussion online, tests are generally not covered during the coverage. For more information check this [Stackoverflow](https://stackoverflow.com/a/24958299/3801905) link.
 
 #### Improvements of Code Coverage:
-<style="color:red">
-<font color="red">
 
 The refactored segment of code that helped imporve Code Coverage are given below:
 
-* Unused lines for methods were removed from the code to improve coverage as they were affecting significantly.
+#### Removed uncovered methods and lines:
+
+ Unused lines for methods were removed from the code to improve coverage as they were affecting significantly.
 
 From ```ArgsException.java``` remove 
 ```
@@ -215,7 +217,8 @@ Repeat the same again.
 public void setErrorCode(ErrorCode  errorCode) {  this.errorCode = errorCode;}
 ```
 
-* In  ```ArgsExceptionTest.java```  Test for OK condition is added.
+#### Test case added:
+In  ```ArgsExceptionTest.java```  Test for OK condition is added.
 
 ```testOkMessage()```  was not available in the code and  **OK** enum was not covered. 
 
