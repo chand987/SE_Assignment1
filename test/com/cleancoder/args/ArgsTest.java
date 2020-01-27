@@ -9,14 +9,12 @@ import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_DOUBLE;
 import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_INTEGER;
 import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_STRING;
 import static com.cleancoder.args.ArgsException.ErrorCode.UNEXPECTED_ARGUMENT;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.Map;
-
 import org.junit.Test;
 
 public class ArgsTest {
@@ -27,6 +25,16 @@ public class ArgsTest {
     assertEquals(0, args.nextArgument());
   }
 
+ //test case added for concatenated type strings as arguments
+  @Test 
+  public void testContinuousFlags() throws Exception {
+    Args argsData = new Args("x#,y##", new String[]{"-xy", "20", "4.5"});
+    assertTrue(argsData.has('x'));
+    assertTrue(argsData.has('y'));
+    assertEquals(20, argsData.getInt('x'));
+    assertEquals(4.5, argsData.getDouble('y'),.001);
+  
+  }
 
   @Test
   public void testWithNoSchemaButWithOneArgument() throws Exception {
@@ -188,17 +196,6 @@ public class ArgsTest {
       assertEquals('x', e.getErrorArgumentId());
     }
   }
-  
-  @Test
-  public void malFormedMapArgument() throws Exception {
-    try {
-      new Args("f&", new String[] {"-f", "key1:val1,key2"});
-      fail();
-    } catch (ArgsException e) {
-      assertEquals(MALFORMED_MAP, e.getErrorCode());
-      assertEquals('f', e.getErrorArgumentId());
-    }
-  }
 
   @Test
   public void manyStringArrayElements() throws Exception {
@@ -218,6 +215,17 @@ public class ArgsTest {
     Map<String, String> map = args.getMap('f');
     assertEquals("val1", map.get("key1"));
     assertEquals("val2", map.get("key2"));
+  }
+
+  @Test
+  public void malFormedMapArgument() throws Exception {
+    try {
+      new Args("f&", new String[] {"-f", "key1:val1,key2"});
+      fail();
+    } catch (ArgsException e) {
+      assertEquals(MALFORMED_MAP, e.getErrorCode());
+      assertEquals('f', e.getErrorArgumentId());
+    }
   }
 
   @Test

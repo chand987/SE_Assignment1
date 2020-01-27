@@ -1,12 +1,12 @@
 package com.cleancoder.args;
 
+import static com.cleancoder.args.ArgsException.ErrorCode.MALFORMED_MAP;
+import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_MAP;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
-
-import static com.cleancoder.args.ArgsException.ErrorCode.MALFORMED_MAP;
-import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_MAP;
 
 public class MapArgumentMarshaler implements ArgumentMarshaler {
   private Map<String, String> map = new HashMap<>();
@@ -25,11 +25,11 @@ public class MapArgumentMarshaler implements ArgumentMarshaler {
       throw new ArgsException(MISSING_MAP);
     }
   }
-
+  
   public static Map<String, String> getValue(ArgumentMarshaler am) {
     if (am != null && am instanceof MapArgumentMarshaler) {
       return ((MapArgumentMarshaler) am).map;
-    } else {
+    }  else {
       return new HashMap<>();
     }
   }

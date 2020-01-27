@@ -3,11 +3,12 @@ package com.cleancoder.args;
 import static com.cleancoder.args.ArgsException.ErrorCode.INVALID_DOUBLE;
 import static com.cleancoder.args.ArgsException.ErrorCode.MISSING_DOUBLE;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class DoubleArgumentMarshaler implements ArgumentMarshaler {
   private double doubleValue = 0;
-
+  
   public void set(Iterator<String> currentArgument) throws ArgsException {
     String parameter = null;
     try {
@@ -19,11 +20,11 @@ public class DoubleArgumentMarshaler implements ArgumentMarshaler {
       throw new ArgsException(INVALID_DOUBLE, parameter);
     }
   }
-
+  
   public static double getValue(ArgumentMarshaler am) {
     if (am != null && am instanceof DoubleArgumentMarshaler) {
       return ((DoubleArgumentMarshaler) am).doubleValue;
-    } else {
+    }  else {
       return 0.0;
     }
   }

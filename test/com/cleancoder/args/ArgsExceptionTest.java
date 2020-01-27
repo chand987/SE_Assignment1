@@ -15,11 +15,12 @@ import static com.cleancoder.args.ArgsException.ErrorCode.UNEXPECTED_ARGUMENT;
 import junit.framework.TestCase;
 
 public class ArgsExceptionTest extends TestCase {
-// test for OK condition
+
   public void testOkMessage() throws Exception {
     ArgsException e = new ArgsException(OK, 'x', null);
     assertEquals("TILT: Should not get here.", e.errorMessage());
   }
+  
   public void testUnexpectedMessage() throws Exception {
     ArgsException e = new ArgsException(UNEXPECTED_ARGUMENT, 'x', null);
     assertEquals("Argument -x unexpected.", e.errorMessage());
@@ -70,4 +71,3 @@ public class ArgsExceptionTest extends TestCase {
     assertEquals("'$' is not a valid argument format.", e.errorMessage());
   }
 }
-
