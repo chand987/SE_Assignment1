@@ -41,9 +41,9 @@ This is an assignment given in Software Engineering course(2020) at [Internation
   * [Removed uncovered methods and lines](https://github.com/chand987/SE_Assignment1#removed-uncovered-methods-and-lines)
   * [Test case added](https://github.com/chand987/SE_Assignment1#test-case-added)
 * [Code Smells](https://github.com/chand987/SE_Assignment1#code-smells-)
-	* [Long Method](link)
-	* [God Class](link)
-* [Linting Improvements](link)
+	* [Long Method](https://github.com/chand987/SE_Assignment1/blob/master/README.md#long-method)
+	* [God Class](https://github.com/chand987/SE_Assignment1/blob/master/README.md#god-class)
+* [Linting Improvements](https://github.com/chand987/SE_Assignment1/blob/master/README.md#linting-improvements-)
 
 ## Objective :
 
