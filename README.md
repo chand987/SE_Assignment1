@@ -248,7 +248,7 @@ So in order to remove code smells I made the following changes.
 
 Those were in 
 
-1. **Long Method**
+#### Long Method
 * Extract Method for variable criteria **'m'**
 
 The changes that are stated below are in-coherence with the following manual which clearly states the decomposition methodology. For step by step details about code smell improvement, refer  [Jdeodrant](https://users.encs.concordia.ca/~nikolaos/jdeodorant/index.php?option=com_content&view=article&id=45)
@@ -264,7 +264,7 @@ if (m == null) {
 
 throw new  ArgsException(UNEXPECTED_ARGUMENT, argChar, null);
 ```
-2. **God Class**
+#### God Class
 * for ```schema``` Extract Class
 
 The changes that are stated below are in-coherence with the following manual which clearly states the decomposition methodology. For step by step details about code smell improvement, refer  [Jdeodrant](https://users.encs.concordia.ca/~nikolaos/jdeodorant/index.php?option=com_content&view=article&id=45)
