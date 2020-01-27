@@ -16,9 +16,6 @@ import java.util.Map;
 /**
  * This is the root class.Rest of the methods 
  are linked with this class.
- * @see Args
- * @see ArgsData
- * @see ArgsException
  */
 public class Args {
   private ArgsData data = new ArgsData();
@@ -71,7 +68,6 @@ public class Args {
   * to check if a matching schema exists.
   * @param argChar schema given in command line input
   * @throws ArgsException {@code UNEXPECTED_ARGUMENT} if flag the flags doesn't match with schema.
-  * @see com.cleancoder.args.ArgsData#argsFound method.
   */
   private void parseArgumentCharacter(char argChar) throws ArgsException {
     ArgumentMarshaler m = setArgumentCharacter(argChar);

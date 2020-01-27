@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Main function of this class is to process the {@code schema} argument 
+ * The purpose of this class is to process the {@code schema} argument 
  in {@link com.cleancoder.args.Args#Args Args} constructor and to create mappings between
  schemas and marshalers.
  */
